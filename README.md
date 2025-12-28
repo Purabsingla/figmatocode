@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# NFTme - UI Engineering Assignment
 
-## Getting Started
+This repository contains the pixel-perfect implementation of the NFTme landing page based on the provided Figma design. The project focuses on exact UI replication for desktop while ensuring a fully fluid and accessible experience across tablet and mobile devices.
 
-First, run the development server:
+Additionally, the design system has been extended to include **About** and **Contact** pages to demonstrate scalability.
+
+🔗 **[Live Preview](INSERT_YOUR_VERCEL_OR_NETLIFY_LINK_HERE)**
+
+## 📋 Assignment Objectives
+
+- **Recreate Landing Page:** Exact replication of the Figma design.
+- **Responsiveness:** Critical evaluation of layout reflow, typography scaling, and spacing.
+- **Extension:** Creation of two additional pages (About & Contact) adhering to the design language.
+
+## 🛠 Tech Stack
+
+- **Framework:** [Next.js 14](https://nextjs.org/) (App Router)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **Icons:** [Lucide React](https://lucide.dev/)
+- **Components:** [shadcn/ui](https://ui.shadcn.com/) (Button, Card, Avatar, Input)
+- **Fonts:** Clash Display (Custom) & Poppins (Google Fonts)
+
+## 📱 Implementation Strategy (Hybrid Layout)
+
+To meet the strict requirement of **"Pixel-Accurate Layout"** from the Figma file while ensuring **"Strong Responsiveness"**, a hybrid CSS strategy was implemented:
+
+1.  **Desktop (lg/xl breakpoints):**
+
+    - Utilizes `absolute` positioning and specific pixel coordinates derived directly from the design file.
+    - Ensures 1:1 visual fidelity with the original mockup.
+
+2.  **Mobile & Tablet:**
+    - Reverts to standard `relative` positioning, `flexbox`, and `grid` layouts.
+    - Elements stack naturally with adjusted margins and padding.
+    - Typography scales dynamically for readability.
+
+This approach guarantees that the desktop view is an exact mirror of the design artifact, while mobile users get a native, scrollable experience.
+
+## 📂 Project Structure
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+├── app/
+│   ├── layout.tsx       # Global layout & Font configuration
+│   ├── page.tsx         # Home / Landing Page (Figma Replica)
+│   ├── about/           # About Us Page (Extended Design)
+│   └── contact/         # Contact Us Page (Extended Design)
+├── components/
+│   └── ui/              # Reusable UI components (Buttons, Inputs, etc.)
+├── public/              # Static assets (Blobs, Images, Icons)
+└── tailwind.config.ts   # Configuration & Theme extension
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Clone the repository:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
 
-## Learn More
+git clone [https://github.com/YOUR_USERNAME/nftme-ui-assignment.git](https://github.com/YOUR_USERNAME/nftme-ui-assignment.git)
+cd nftme-ui-assignment
+```
 
-To learn more about Next.js, take a look at the following resources:
+Install dependencies:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+npm install
+# or
+yarn install
+```
 
-## Deploy on Vercel
+Run the development server:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+npm run dev
+
+```
+
+Open the browser: Navigate to http://localhost:3000 to view the application.
+
+## 📸 Deliverables & Screenshots
+
+1. Desktop View (Pixel Perfect)
+   Exact replication of the Figma file using absolute positioning.
+
+2. Tablet View (Adaptive)
+   Layout adapts to 2-column grids and scaled typography.
+
+3. Mobile View (Fluid Stack)
+   Elements stack vertically with optimized touch targets and spacing.

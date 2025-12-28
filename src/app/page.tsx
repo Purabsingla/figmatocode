@@ -509,13 +509,17 @@ const NftLandingPage = (): React.JSX.Element => {
       </div>
 
       {/* CTA Section */}
-      <section className="relative mt-20 px-4 flex flex-col items-center md:block md:mt-0 md:absolute md:top-[4976px] md:left-[120px] md:flex-row md:gap-[109px]">
+      {/* --- CTA SECTION --- */}
+      <section className="relative mt-20 px-4 flex flex-col items-center md:block md:mt-0 md:absolute md:top-[4976px] md:left-[120px] z-10">
+        {/* Image: Fluid on mobile, Fixed size on Desktop */}
         <img
-          className="w-full max-w-[550px] h-auto md:w-[550px] md:h-[550px] rounded-[20px] object-cover"
+          className="w-full max-w-[550px] h-auto rounded-[20px] object-cover md:w-[550px] md:h-[550px]"
           alt="Cta img"
           src="https://c.animaapp.com/mjpa9qww4RQgSg/img/cta-img.png"
         />
-        <div className="flex flex-col gap-8 md:gap-[50px] mt-8 md:mt-[101px] text-center md:text-left md:absolute md:left-[660px]">
+
+        {/* Text Content: Stacked below image on Mobile, Absolute positioned on Desktop */}
+        <div className="flex flex-col gap-8 mt-8 text-center md:text-left md:mt-0 md:absolute md:top-[101px] md:left-[660px] md:gap-[50px]">
           <h2 className="w-full md:w-[541px] [font-family:'Clash_Display-Semibold',Helvetica] font-normal text-white text-3xl md:text-5xl tracking-[1.00px] leading-tight md:leading-[60px]">
             Join The Community And Get The Best Nft Collection
           </h2>
@@ -532,16 +536,19 @@ const NftLandingPage = (): React.JSX.Element => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="relative mt-20 md:mt-0 md:absolute md:top-[5726px] md:left-0 md:w-[1522px] md:h-[278px] bg-transparent border-t border-white/10 md:border-none">
-        <div className="hidden md:block absolute top-0 left-0 w-[1522px] h-[278px] backdrop-blur-[25px] bg-[linear-gradient(135deg,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0.08)_100%)]" />
+      {/* --- FOOTER --- */}
+      <footer className="relative mt-20 w-full md:mt-0 md:absolute md:top-[5726px] md:left-0 md:w-[1522px] md:h-[278px] bg-transparent border-t border-white/10 md:border-none z-10">
+        {/* Desktop Blur Background (Hidden on Mobile) */}
+        <div className="hidden md:block absolute top-0 left-0 w-full h-full backdrop-blur-[25px] bg-[linear-gradient(135deg,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0.08)_100%)]" />
 
         <div className="flex flex-col items-center py-10 md:block md:py-0">
-          <div className="md:absolute md:top-[52px] md:left-[120px] h-[45px] flex items-center justify-center [font-family:'Clash_Display-Semibold',Helvetica] font-normal text-white text-4xl tracking-[0] leading-[45px] whitespace-nowrap mb-6 md:mb-0">
+          {/* Logo */}
+          <div className="mb-6 md:mb-0 md:absolute md:top-[52px] md:left-[120px] h-[45px] flex items-center justify-center [font-family:'Clash_Display-Semibold',Helvetica] font-normal text-white text-4xl tracking-[0] leading-[45px] whitespace-nowrap">
             NFTme
           </div>
 
-          <nav className="flex gap-6 md:items-start md:gap-[75px] md:p-2.5 md:top-[55px] md:left-[461px] md:absolute mb-8 md:mb-0">
+          {/* Navigation Links */}
+          <nav className="flex flex-wrap justify-center gap-6 mb-8 md:mb-0 md:justify-start md:gap-[75px] md:p-2.5 md:top-[55px] md:left-[461px] md:absolute">
             {footerLinks.map((link, index) => (
               <button
                 key={index}
@@ -552,20 +559,26 @@ const NftLandingPage = (): React.JSX.Element => {
             ))}
           </nav>
 
+          {/* Social Icons */}
           <img
-            className="md:absolute md:top-[55px] md:left-[1140px] w-[180px] h-10 mb-8 md:mb-0"
+            className="mb-8 md:mb-0 md:absolute md:top-[55px] md:left-[1140px] w-[180px] h-10"
             alt="Social"
             src="https://c.animaapp.com/mjpa9qww4RQgSg/img/social.png"
           />
 
-          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-[15px] md:top-[211px] md:left-[120px] md:absolute text-center md:text-left">
-            <div className="text-white text-base">Privacy policy</div>
-            <div className="hidden md:block text-white text-base">|</div>
-            <div className="text-white text-base text-center">
+          {/* Copyright / Legal */}
+          <div className="flex flex-col md:flex-row items-center gap-4 text-center md:text-left md:gap-[15px] md:top-[211px] md:left-[120px] md:absolute">
+            <div className="text-white/70 text-base [font-family:'Ranade-Regular',Helvetica]">
+              Privacy policy
+            </div>
+            <div className="hidden md:block text-white/70 text-base">|</div>
+            <div className="text-white/70 text-base [font-family:'Poppins',Helvetica] font-medium">
               Copyright @ Kartik Bansal 2022. All Rights Reserved.
             </div>
-            <div className="hidden md:block text-white text-base">|</div>
-            <div className="text-white text-base">Terms of service</div>
+            <div className="hidden md:block text-white/70 text-base">|</div>
+            <div className="text-white/70 text-base [font-family:'Ranade-Regular',Helvetica]">
+              Terms of service
+            </div>
           </div>
         </div>
       </footer>
